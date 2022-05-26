@@ -5,6 +5,7 @@ from datetime import datetime
 from random import randint
 from PIL import Image,ImageTk
 import locale
+from tkinter.font import Font
 
 window = Tk()
 class Pos:
@@ -12,22 +13,29 @@ class Pos:
         self.window = window
         # Membuat tampilan GUI(ukuran, dll)
         window.geometry("1220x900")
-        window.title("Farhan Pizza")
+        window.title("Pizza Corner")
         color = "sky blue"
         window.resizable(width=1, height=1)
         window.configure(bg=color)
 
                 
         # Membuat Frame atas yang akan ditempatkan label
+        bigfont = Font(
+			family = "Comic Sans MS",
+			size = 25, 
+			weight = "bold",
+			slant = "roman",
+			underline = 0,
+			overstrike=0)
         top_frame = Frame(window, bg=color, width=1200, height=50, relief="raise")
         top_frame.pack(side=TOP)
         # Membuat label/judul di frame
-        title_label = Label(top_frame, text="FARHAN PIZZA", font="Helvetica 20 bold", bg=color,
-                            pady=10)
+        title_label = Label(top_frame, text="Pizza Corner", font=bigfont, bg=color,
+                            pady=0)
         title_label.grid(row=0, column=0)                    
         # Membuat frame kiri untuk tabs
-        left_frame = Frame(window, bg="PaleVioletRed4", width=600, height=520)
-        left_frame.place(x=30, y=50)
+        left_frame = Frame(window, bg="skyblue", width=600, height=520)
+        left_frame.place(x=30+0.49, y=50)
         title_label.pack(side=TOP)
         # Membuat frame bawah untuk button nantinya
         bottom_frame = Frame(window, bg="grey", height=120, width=1210, relief="raise")
