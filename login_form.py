@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image,ImageTk
+from tkinter.font import Font
 
 
 class login_form:
@@ -11,10 +12,17 @@ class login_form:
 		
 		
 		# login label
-		login_label=Label(root,text="Welcome to Farhan Pizza",font="suntowns 25 bold",bg='sky blue')
+		bigfont = Font(
+			family = "Comic Sans MS",
+			size = 25, 
+			weight = "normal",
+			slant = "roman",
+			underline = 0,
+			overstrike=0)
+		login_label=Label(root,text="Welcome to Pizza Corner",font=bigfont ,bg='sky blue')
 		login_label.place(x=125,y=20)
 		#username label
-		user_label=Label(root,text="Username :",font="helvetica 15 ",bg="azure")
+		user_label=Label(root,text="Username :",font="helvetica 15 ",bg="light steel blue")
 		user_label.place(x=200,y=150)
 
 		global user_inp
@@ -25,7 +33,7 @@ class login_form:
 		user_e=Entry(root,textvariable=user_inp)
 		user_e.place(x=320,y=153,height=25)
 		#pin label
-		pass_label=Label(root,text="Pin :",font="helvetica 15 ",bg="azure")
+		pass_label=Label(root,text="Pin :",font="helvetica 15 ",bg="light steel blue")
 		pass_label.place(x=210,y=200)
 
 		# entry widget untuk pin
